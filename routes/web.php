@@ -5,16 +5,7 @@ use App\Http\Controllers\IncidentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,14 +29,11 @@ Route::middleware('auth')->group(function () {
 
 
     // entity
-
-    //Route::get('/entity/create',              [EntityController::class, 'create'])->name('entity.create');
     Route::post('/entity',                    [EntityController::class, 'store'])->name('entity.store');
     Route::get('/entities',                   [EntityController::class, 'index'])->name('entity.list');
     Route::delete('/entity/delete/{id}',      [EntityController::class, 'delete'])->name('entity.delete');
     Route::get('/entity/edit/{id}',           [EntityController::class, 'edit'])->name('entity.edit');
     Route::put('/entity/update/{entity}',     [EntityController::class, 'update'])->name('entity.update');
-    // Route::get('/entity/create',           [EntityController::class, 'create'])->name('incident.create');
 });
 
 

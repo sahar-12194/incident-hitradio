@@ -75,8 +75,6 @@ class EntityController extends Controller
             ->get();
         $entity = Entity::where('id', $id)->first();
 
-        //dd($incident); git config --global user.email "barhdadisahar@gmail.com"
-      //  git config --global user.name "sahar-12194"
         return view('Entity.list')
             ->with('entity', $entity)
             ->with('items', $items);
